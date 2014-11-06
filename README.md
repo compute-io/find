@@ -122,7 +122,7 @@ function condition( val ) {
 }
 
 var vals = find( data, opts, condition );
-// returns [ 30, 20 ]
+// returns [ 3, 2 ]
 ```
 
 
