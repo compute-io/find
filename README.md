@@ -44,6 +44,76 @@ var vals = find( data, opts, condition );
 // returns [ 3, 5 ]
 ```
 
+If no `array` elements satisfy the test condition, the function returns an empty `array`.
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+var opts = {
+	'k': 2,
+	'returns': 'values'	
+};
+
+function condition( val ) {
+	return val > 100;
+}
+
+var vals = find( data, opts, condition );
+// returns []
+```
+
+The function accepts two options: `k` and `returns`. `k` both limits the number of elements returned and the direction in which to search.
+
+For example, to find the last two values satisfying a search condition,
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+var opts = {
+	'k': -2,
+	'returns': 'values'	
+};
+
+function condition( val ) {
+	return val > 2;
+}
+
+var vals = find( data, opts, condition );
+// returns [ 6, 5 ]
+```
+
+`returns` specifies the type of result to return and may be one of two options: `indices` and `values`. `indices` indicates to return the element indices of those elements satisfying the search condition, and `values` indicates to return the element values of those elements satisfying the search condition.
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+var opts = {
+	'k': -2,
+	'returns': 'indices'	
+};
+
+function condition( val ) {
+	return val > 2;
+}
+
+var vals = find( data, opts, condition );
+// returns [ 3, 2 ]
+```
+
+By default, `k` is the length of the input `array` and `returns` is set to `indices`.
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+function condition( val ) {
+	return val > 2;
+}
+
+var vals = find( data, condition );
+// returns [ 0, 2, 3 ]
+```
+
+
 
 ## Examples
 
