@@ -26,7 +26,7 @@ var find = require( 'compute-find' );
 
 #### find( arr, [opts,] clbk )
 
-Finds `array` elements which satisfy a test condition. The function accepts two options: `k` and `returns`:
+Finds `array` elements which satisfy a test condition. The function accepts two options: `k` and `returns`.
 
 * 	__k__: an `integer` which limits the number of elements returned and whose sign determines the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
 
