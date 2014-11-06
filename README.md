@@ -28,9 +28,9 @@ var find = require( 'compute-find' );
 
 Finds `array` elements which satisfy a test condition. The function accepts two options: `k` and `returns`:
 
-* 	`k`: both limits the number of elements returned and the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
+* 	__k__: both limits the number of elements returned and the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
 
-* 	`returns`: specifies the type of result to return and may be one of two options: `indices` and `values`.
+* 	__returns__: specifies the type of result to return and may be one of two options: `indices` and `values`.
 	- 	__indices__: indicates to return the element indices of those elements satisfying the search condition
 	- 	__values__: indicates to return the element values of those elements satisfying the search condition.
 
