@@ -34,7 +34,7 @@ Finds `array` elements which satisfy a test condition. The function accepts two 
 	- 	__indices__: indicates to return the element indices of those elements satisfying the search condition
 	- 	__values__: indicates to return the element values of those elements satisfying the search condition.
 
-The provided `callback` is provided three arguments:
+The `callback` is provided three arguments:
 *	__element__: the current `array` element
 *	__index__: the current `array` element's index
 *	__array__: the input `array`
