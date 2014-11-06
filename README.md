@@ -64,7 +64,7 @@ var opts = {
 };
 
 function condition( val ) {
-	return val > 2;
+	return val > 20;
 }
 
 var vals = find( data, opts, condition );
