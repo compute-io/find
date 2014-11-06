@@ -31,13 +31,13 @@ Finds `array` elements which satisfy a test condition. The function accepts two 
 * 	`k`: both limits the number of elements returned and the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
 
 * 	`returns`: specifies the type of result to return and may be one of two options: `indices` and `values`.
-	- 	`indices`: indicates to return the element indices of those elements satisfying the search condition
-	- 	`values`: indicates to return the element values of those elements satisfying the search condition.
+	- 	__indices__: indicates to return the element indices of those elements satisfying the search condition
+	- 	__values__: indicates to return the element values of those elements satisfying the search condition.
 
 The provided `callback` is provided three arguments:
-*	`element`: the current `array` element
-*	`index`: the current `array` element's index
-*	`array`: the `array` to which the `element` belongs
+*	__element__: the current `array` element
+*	__index__: the current `array` element's index
+*	__array__: the `array` to which the __element__ belongs
 
 By default, `k` is the length of the input `array` and `returns` is set to `indices`.
 
