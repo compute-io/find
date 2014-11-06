@@ -1,8 +1,10 @@
-find
+Find
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Finds array elements satisfying a test condition.
+> Finds array elements which satisfy a test condition.
+
+A better version than the ECMAScript 6 [proposal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find).
 
 
 ## Installation
@@ -19,18 +21,55 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-find' );
+var find = require( 'compute-find' );
 ```
 
-#### foo( arr )
+#### find( arr, [opts,] clbk )
 
-What does this function do?
+Finds `array` elements which satisfy a test condition.
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+var opts = {
+	'k': 2,
+	'returns': 'values'	
+};
+
+function condition( val ) {
+	return val > 2;
+}
+
+var vals = find( data, opts, condition );
+// returns [ 3, 5 ]
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-find' );
+var find = require( 'compute-find' );
+
+// Simulate the data...
+var data = new Array( 100 );
+
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = Math.round( Math.random()*100 );
+}
+
+// Find the first 10 values greater than 25...
+var opts = {
+	'k': 10,
+	'returns': 'values'	
+};
+
+function condition( val ) {
+	return val > 25;
+}
+
+var vals = find( data, opts, condition );
+
+console.log( vals.join( '\n' ) );
 ```
 
 To run the example code from the top-level application directory,
