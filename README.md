@@ -26,7 +26,27 @@ var find = require( 'compute-find' );
 
 #### find( arr, [opts,] clbk )
 
-Finds `array` elements which satisfy a test condition.
+Finds `array` elements which satisfy a test condition. The function accepts two options: `k` and `returns`:
+
+* 	`k` both limits the number of elements returned and the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
+
+* 	`returns` specifies the type of result to return and may be one of two options: `indices` and `values`. `indices` indicates to return the element indices of those elements satisfying the search condition, and `values` indicates to return the element values of those elements satisfying the search condition.
+
+By default, `k` is the length of the input `array` and `returns` is set to `indices`.
+
+``` javascript
+var data = [ 3, 2, 5, 6, 1 ];
+
+function condition( val ) {
+	return val > 2;
+}
+
+var vals = find( data, condition );
+// returns [ 0, 2, 3 ]
+```
+
+To limit the number of results and specify that `values` should be returned,
+
 
 ``` javascript
 var data = [ 3, 2, 5, 6, 1 ];
@@ -62,9 +82,7 @@ var vals = find( data, opts, condition );
 // returns []
 ```
 
-The function accepts two options: `k` and `returns`. `k` both limits the number of elements returned and the direction in which to search.
-
-For example, to find the last two values satisfying a search condition,
+To find the last two values satisfying a search condition,
 
 ``` javascript
 var data = [ 3, 2, 5, 6, 1 ];
@@ -82,7 +100,7 @@ var vals = find( data, opts, condition );
 // returns [ 6, 5 ]
 ```
 
-`returns` specifies the type of result to return and may be one of two options: `indices` and `values`. `indices` indicates to return the element indices of those elements satisfying the search condition, and `values` indicates to return the element values of those elements satisfying the search condition.
+To explicitly specify that only indices are returned,
 
 ``` javascript
 var data = [ 3, 2, 5, 6, 1 ];
@@ -98,19 +116,6 @@ function condition( val ) {
 
 var vals = find( data, opts, condition );
 // returns [ 3, 2 ]
-```
-
-By default, `k` is the length of the input `array` and `returns` is set to `indices`.
-
-``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
-
-function condition( val ) {
-	return val > 2;
-}
-
-var vals = find( data, condition );
-// returns [ 0, 2, 3 ]
 ```
 
 

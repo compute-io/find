@@ -33,6 +33,7 @@
     "url": "https://github.com/compute-io/find/issues"
   },
   "dependencies": {
+    "validate.io-integer": "^1.0.1",
     "validate.io-object": "^1.0.0"
   },
   "devDependencies": {

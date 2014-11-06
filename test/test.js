@@ -98,9 +98,10 @@ describe( 'compute-find', function tests() {
 		}
 	});
 
-	it( 'should throw an error if the option to limit the number of found values is not a number', function test() {
+	it( 'should throw an error if the option to limit the number of found values is not an integer', function test() {
 		var values = [
 			'5',
+			3.14,
 			[],
 			true,
 			NaN,
