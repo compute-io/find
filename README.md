@@ -42,10 +42,10 @@ The provided `callback` is provided three arguments:
 By default, `k` is the length of the input `array` and `returns` is set to `indices`.
 
 ``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
+var data = [ 30, 20, 50, 60, 10 ];
 
 function condition( val ) {
-	return val > 2;
+	return val > 20;
 }
 
 var vals = find( data, condition );
@@ -56,7 +56,7 @@ To limit the number of results and specify that `values` should be returned,
 
 
 ``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
+var data = [ 30, 20, 50, 60, 10 ];
 
 var opts = {
 	'k': 2,
@@ -68,13 +68,13 @@ function condition( val ) {
 }
 
 var vals = find( data, opts, condition );
-// returns [ 3, 5 ]
+// returns [ 30, 50 ]
 ```
 
 If no `array` elements satisfy the test condition, the function returns an empty `array`.
 
 ``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
+var data = [ 30, 20, 50, 60, 10 ];
 
 var opts = {
 	'k': 2,
@@ -82,7 +82,7 @@ var opts = {
 };
 
 function condition( val ) {
-	return val > 100;
+	return val > 1000;
 }
 
 var vals = find( data, opts, condition );
@@ -92,7 +92,7 @@ var vals = find( data, opts, condition );
 To find the last two values satisfying a search condition,
 
 ``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
+var data = [ 30, 20, 50, 60, 10 ];
 
 var opts = {
 	'k': -2,
@@ -100,17 +100,17 @@ var opts = {
 };
 
 function condition( val ) {
-	return val > 2;
+	return val > 20;
 }
 
 var vals = find( data, opts, condition );
-// returns [ 6, 5 ]
+// returns [ 60, 50 ]
 ```
 
 To explicitly specify that only indices are returned,
 
 ``` javascript
-var data = [ 3, 2, 5, 6, 1 ];
+var data = [ 30, 20, 50, 60, 10 ];
 
 var opts = {
 	'k': -2,
@@ -118,11 +118,11 @@ var opts = {
 };
 
 function condition( val ) {
-	return val > 2;
+	return val > 20;
 }
 
 var vals = find( data, opts, condition );
-// returns [ 3, 2 ]
+// returns [ 30, 20 ]
 ```
 
 
