@@ -37,7 +37,7 @@ Finds `array` elements which satisfy a test condition. The function accepts two 
 The provided `callback` is provided three arguments:
 *	__element__: the current `array` element
 *	__index__: the current `array` element's index
-*	__array__: the `array` to which the __element__ belongs
+*	__array__: the input `array`
 
 By default, `k` is the length of the input `array` and `returns` is set to `indices`.
 
