@@ -161,7 +161,7 @@ for ( var i = 0; i < data.length; i++ ) {
 // Find the first 10 values greater than 25...
 var opts = {
 	'k': 10,
-	'returns': 'all'	
+	'returns': '*'	
 };
 
 function condition( val ) {
