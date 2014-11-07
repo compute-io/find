@@ -1,6 +1,6 @@
 {
   "name": "compute-find",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Finds array elements which satisfy a test condition.",
   "author": {
     "name": "Athan Reines",
