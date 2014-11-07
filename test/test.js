@@ -284,4 +284,28 @@ describe( 'compute-find', function tests() {
 
 	});
 
+	it( 'should return both indices and values of array elements which satisfy a test condition', function test() {
+		var data, expected, actual;
+
+		function condition( val ) {
+			return val < 5;
+		}
+
+		data = [ 3, 2, 5, 3, 2 ];
+
+		// Begin-to-end:
+		expected = [ [0,3], [1,2], [3,3], [4,2] ];
+
+		actual = find( data, { 'returns': '*' }, condition );
+
+		assert.deepEqual( actual, expected );
+
+		// End-to-begin:
+		expected = [ [4,2], [3,3] ];
+
+		actual = find( data, { 'k': -2, 'returns': '*' }, condition );
+
+		assert.deepEqual( actual, expected );
+	});
+
 });

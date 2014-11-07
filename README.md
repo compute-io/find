@@ -30,9 +30,10 @@ Finds `array` elements which satisfy a test condition. The function accepts two 
 
 * 	__k__: an `integer` which limits the number of elements returned and whose sign determines the direction in which to search. If set to a negative `integer`, the function searches from the last element to the first element.
 
-* 	__returns__: specifies the type of result to return and may be one of two options: `indices` and `values`.
+* 	__returns__: specifies the type of result to return and may be one of three options: `indices`, `values`, `*`.
 	- 	__indices__: indicates to return the element indices of those elements satisfying the search condition.
 	- 	__values__: indicates to return the element values of those elements satisfying the search condition.
+	-	__*__: indicates to return both the element indices and values of those elements satisfying the search condition. The returned result is an `array` of `arrays`, where each sub-array is an index-value pair.
 
 The `callback` is provided three arguments:
 *	__element__: the current `array` element
@@ -125,6 +126,24 @@ var vals = find( data, opts, condition );
 // returns [ 3, 2 ]
 ```
 
+And to return both indices and values as index-value pairs,
+
+``` javascript
+var data = [ 30, 20, 50, 60, 10 ];
+
+var opts = {
+	'k': -2,
+	'returns': '*'	
+};
+
+function condition( val ) {
+	return val > 20;
+}
+
+var vals = find( data, opts, condition );
+// returns [ [3, 60], [2, 50] ]
+```
+
 
 
 ## Examples
@@ -142,7 +161,7 @@ for ( var i = 0; i < data.length; i++ ) {
 // Find the first 10 values greater than 25...
 var opts = {
 	'k': 10,
-	'returns': 'values'	
+	'returns': 'all'	
 };
 
 function condition( val ) {
