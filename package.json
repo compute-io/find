@@ -27,7 +27,9 @@
     "compute",
     "computation",
     "search",
-    "array"
+    "array",
+    "findIndex",
+    "find"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/find/issues"
